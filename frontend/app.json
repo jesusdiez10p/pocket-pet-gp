@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "pocket-pet",
+    "slug": "pocket-pet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyCfWh1daeEOsqBFvL1HxfjdbdW-I6ylJFY",
+          "authDomain": "pet-app-gp.firebaseapp.com",
+          "databaseURL": "https://pet-app-gp-default-rtdb.firebaseio.com",
+          "projectId": "pet-app-gp",
+          "storageBucket": "pet-app-gp.appspot.com",
+          "messagingSenderId": "1002993290617",
+          "appId": "1:1002993290617:web:534affc2d44607767fb3a8",
+          "measurementId": "G-QR0JXH62DH"
+        }
+      }
+    }
+  }
+}
