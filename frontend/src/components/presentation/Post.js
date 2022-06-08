@@ -121,24 +121,17 @@ class Post extends Component {
                         }}>
                         <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.dogIcon} />
                     </TouchableOpacity>
-
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         onPress={() => {
                             alert("Comentarios");
                         }}>
                         <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.chatIcon} />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => {
-                            alert("Sugerir publicacion");
-                        }}>
-                        <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.arrowIcon} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <TouchableOpacity
                         onPress={() => {
                             onShare()
                         }}>
-                        <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.shareIcon} />
+                        <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.arrowIcon} />
                     </TouchableOpacity>
                     <TouchableOpacity style={{ marginLeft: 5 }}
                         onPress={() => {

@@ -4,7 +4,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { Feather, FontAwesome, Entypo } from "@expo/vector-icons";
 import CameraScreen from "../../screens/camera";
 import MainScreen from "../../screens/feed";
-import MapScreen from "../../screens/selectLocation";
+import ChatScreen from "../../screens/selectLocation";
 import PetScreen from "../../screens/pets";
 import UserScreen from "../../screens/user";
 import { useSelector } from "react-redux";
@@ -57,11 +57,11 @@ export class HomeScreen extends React.Component {
           //BotonBarra - pantalla Location
         }
         <Tab.Screen
-          name="Location"
-          component={MapScreen}
+          name="Chat"
+          component={ChatScreen}
           options={{
             tabBarIcon: ({ color }) => (
-              <Entypo name="location-pin" size={24} color={color} />
+              <Entypo name="chat" size={24} color={color} />
             ),
           }}
         />
