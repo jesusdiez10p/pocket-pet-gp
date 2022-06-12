@@ -15,6 +15,7 @@ import { useIsFocused, useNavigation } from '@react-navigation/native'
 export default function Pets({ user, pets }) {
 
   const [count, setCount] = useState(false);
+  const [cont, setCont] = useState(false);
   const [nnombre, changennombre] = React.useState(null);
   const [nraza, changenraza] = React.useState(null);
   const [nedad, changenedad] = React.useState(null);
@@ -65,9 +66,22 @@ export default function Pets({ user, pets }) {
 
   const dispatch = useDispatch();
 
-  const handlePetFunction = async () => {
+  const handlePetFunction = () => {
+    if (nnombre == "" || nnombre == null || nraza == "" || nraza == null || nedad == "" || nedad == null) {
+      setCont(true)
+      console.log('Faltan datos')
+      return
+    }
+    savePet()
+  }
+
+  const savePet = async () => {
+    setCount(false)
     const response = await API.createUserPet(nnombre, nraza, nedad)
     console.log(response)
+    changennombre(null)
+    changenraza(null)
+    changenedad(null)
   }
 
   const Separator = () => (
@@ -91,6 +105,8 @@ export default function Pets({ user, pets }) {
   };
 
   return (
+    <>
+
     <Animatable.View animation="slideInLeft" style={{ marginVertical: 15, paddingVertical: 5, marginTop: 15 }} >
       {/* <Text>Aqui debería ir moka</Text> */}
       <FlatList style={styles.petsView}
@@ -164,7 +180,7 @@ export default function Pets({ user, pets }) {
     
     {String(user.uid)!=String(auth.uid)?
     <></>:
-    pets.length<5? 
+    pets.length<50? 
       <TouchableOpacity style={styles.touch} onPress={() => { setCount(true) }} >
         <View style={{ marginLeft: 5 }}>
           <MaterialCommunityIcons name="dog" size={20} color="white" />
@@ -178,7 +194,35 @@ export default function Pets({ user, pets }) {
       <Text>*Máximo de mascotas alcanzado.</Text>
 }
       <Modal transparent={true} visible={count} >
-        <Animatable.View style={{ backgroundColor: "#000000aa", flex: 1 }}>
+        <Modal transparent={true} visible={cont}>
+          <Animatable.View style={{ backgroundColor: "#000000aa", flex: 1, justifyContent: "center", alignItems: "center" }}>
+              <Animatable.View 
+                  style={{
+                      backgroundColor: "#a69dd1",
+                      margin: 50,
+                      padding: 30,
+                      borderRadius: 20
+                  }}
+                  animation="zoomIn"
+              >
+                  <Text>Complete todos los campos</Text>
+
+                  <TouchableOpacity
+                      style={{
+                          backgroundColor: "#ffffff",
+                          padding:10,
+                          marginTop: 20,
+                          alignSelf: "center",
+                          borderRadius: 10}}
+                          onPress={() => { setCont(false) }}
+                  >
+                      <Text style={{textAlign: "center", fontWeight: "bold"}}>Aceptar</Text>
+                  </TouchableOpacity>
+              </Animatable.View>
+          </Animatable.View>
+        </Modal>
+
+        <ScrollView style={{ backgroundColor: "#000000aa", flex: 1 }}>
           <Animatable.View style={styles.popup} animation="zoomIn">
             <Text style={styles.titulo}>Registro Mascotas</Text>
             <Separator />
@@ -187,19 +231,17 @@ export default function Pets({ user, pets }) {
               <TextInput style={styles.escrito}
                 //placeholder='ingresar nombre'
                 onChangeText={changennombre}
-                value={nnombre}
               />
               <Text style={styles.ingreso}>Raza:</Text>
               <TextInput style={styles.escrito}
                 //placeholder='ingresar nombre'
                 onChangeText={changenraza}
-                value={nraza}
               />
               <Text style={styles.ingreso}>Edad:</Text>
               <TextInput style={styles.escrito}
                 //placeholder='ingresar nombre'
+                keyboardType="numeric"
                 onChangeText={changenedad}
-                value={nedad}
               />
             </View>
             <Text style={styles.ingreso}>Imagen:</Text>
@@ -222,11 +264,11 @@ export default function Pets({ user, pets }) {
               </TouchableOpacity>
             </View>
             <Separator />
-            <TouchableOpacity style={styles.poptouchsi} onPress={handlePetFunction}>
+            <TouchableOpacity style={styles.poptouchsi} onPress={() => {handlePetFunction()}}>
               <View style={{ marginLeft: 5 }} >
                 {/* <MaterialCommunityIcons name="dog" size={24} color="black" /> */}
               </View>
-              <Text>  Registro </Text>
+              <Text>  Registrar mascota </Text>
               <View style={{ marginRight: 5 }}>
                 <MaterialCommunityIcons name="dog" size={24} color="#8cbf9f" />
               </View>
@@ -243,9 +285,10 @@ export default function Pets({ user, pets }) {
               </View>
             </TouchableOpacity>
           </Animatable.View>
-        </Animatable.View>
+        </ScrollView>
       </Modal>
 
     </Animatable.View>
+  </>
   );
 }
