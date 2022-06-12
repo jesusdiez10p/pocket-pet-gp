@@ -28,9 +28,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   checkboxContainer: {
+<<<<<<< HEAD
     alignItems: "center",
     flexDirection: "row",
     marginTop: 20,
+=======
+    flexDirection: "row",
+    marginBottom: 20,
+>>>>>>> c88cc49c354d126dbd7414915327c62eb4173b09
   },
   checkbox: {
     alignSelf: "center",

@@ -63,12 +63,19 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
       <View >
         {authPage == 0? 
           <View></View> : 
+<<<<<<< HEAD
           <View>
+=======
+          <View style={styles.checkboxContainer}>
+>>>>>>> c88cc49c354d126dbd7414915327c62eb4173b09
             <TextInput style={styles.TextInput}
               secureTextEntry
               placeholder = "Confirmar contrasena">
             </TextInput>
+<<<<<<< HEAD
             <View style={styles.checkboxContainer}>
+=======
+>>>>>>> c88cc49c354d126dbd7414915327c62eb4173b09
             <Checkbox
             status={checked ? 'checked' : 'unchecked'}
             onPress={() => {
@@ -77,7 +84,10 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
             style={styles.checkbox}
             />
             <Text style={styles.label}>Soy Albergue</Text>
+<<<<<<< HEAD
             </View>
+=======
+>>>>>>> c88cc49c354d126dbd7414915327c62eb4173b09
           </View>
             }
       </View>
