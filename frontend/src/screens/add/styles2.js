@@ -265,4 +265,4 @@ const styles2 = StyleSheet.create({
 
 },);
 
-export default styles;
+export default styles2;
