@@ -63,7 +63,7 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
       <View >
         {authPage == 0? 
           <View></View> : 
-          <View>
+          <View style={styles.checkboxContainer}>
             <TextInput style={styles.TextInput}
               secureTextEntry
               placeholder = "Confirmar contrasena">
