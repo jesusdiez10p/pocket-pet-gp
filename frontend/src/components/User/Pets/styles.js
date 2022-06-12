@@ -48,7 +48,7 @@ const styles= StyleSheet.create({
 
     ingreso:{textAlign:"left",marginTop:7,fontSize:18,color:"white"},
     escrito:{ color:"#eae4f0",marginTop:3,borderWidth: 1,borderRightColor:"white",
-            borderBottomColor:"white",borderColor:"#735094",height:25, textAlign:"center",alignContent:"center",paddingBottom:0},
+        borderBottomColor:"white",borderColor:"#735094", borderRadius:10, height:25, textAlign:"center",alignContent:"center",paddingBottom:0},
     poptouch: {flexDirection: "row",  alignItems:"center",backgroundColor:"#d1a4fc",alignSelf:"center",borderRadius:12,margin:10},
     separator: {marginVertical: 8,borderBottomColor: 'black',borderBottomWidth: StyleSheet.hairlineWidth},
     poptouchsi: {flexDirection: "row",  alignItems:"center",backgroundColor:"#ebdff0",alignSelf:"center",borderRadius:7,margin:10, borderWidth:1,borderColor:"#605463",width:165},
