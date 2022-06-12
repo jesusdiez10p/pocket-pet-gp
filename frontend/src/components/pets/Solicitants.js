@@ -38,6 +38,8 @@ export default function ViewPetSolicitants({route}) {
                                     <Text >{item.nombre}</Text>
                                     <Text style={styles.DetalleSolicitante}>Mensaje: </Text>
                                     <Text>{item.mensaje}</Text>
+                                    <Text style={styles.DetalleSolicitante}>Celular: </Text>
+                                    <Text>{item.celular}</Text>
                                 </View>
                             </View>
                         </View>

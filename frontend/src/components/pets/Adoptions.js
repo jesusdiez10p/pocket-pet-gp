@@ -15,6 +15,7 @@ function Adoptions(props) {
 
     const [nnombre, changennombre] = React.useState(null);
     const [nmensaje, changemensaje] = React.useState(null);
+    const [ncelular, changecelular] = React.useState(null);
 
     const [count, setCount] = useState(false);
     const [show, setShow] = useState(false);
@@ -45,7 +46,7 @@ function Adoptions(props) {
     var nuevopets=[]
 
     const handlePetRequest = async (item) => {
-        const response = await API.addSolicitud(item.idOwner,item.id,nnombre,nmensaje)
+        const response = await API.addSolicitud(item.idOwner,item.id,nnombre,nmensaje,ncelular)
         console.log("hola " + item.idOwner )
         console.log("hola2 " + item.id )
     }
@@ -167,6 +168,13 @@ console.log(nuevopets)
                                 placeholder='Mensaje'
                                 onChangeText={changemensaje}
                                 value={nmensaje}
+                                
+                            />
+                            <Text style={styles.ingreso}>Celular:</Text>
+                            <TextInput style={styles.escrito}
+                                placeholder='Celular'
+                                onChangeText={changecelular}
+                                value={ncelular}
                                 
                             />
                             </View>

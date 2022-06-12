@@ -93,7 +93,7 @@ export async function signOut() {
     });
  }
 
-export async function addSolicitud(uid, idMascota, nombre, mensaje){
+export async function addSolicitud(uid, idMascota, nombre, mensaje, celular){
   firebase
   .firestore()
   .collection('user')
@@ -104,7 +104,8 @@ export async function addSolicitud(uid, idMascota, nombre, mensaje){
   .add({
     idPropuesta: firebase.auth().currentUser.uid,
     nombre,
-    mensaje
+    mensaje,
+	celular
   })
 }
 
