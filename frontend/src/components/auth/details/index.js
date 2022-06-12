@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { Checkbox } from "react-native-paper";
 import { Feather } from "@expo/vector-icons";
 import styles from "./style";
 import { useDispatch } from "react-redux";
@@ -7,7 +8,7 @@ import { register, login } from "../../../redux/actions";
 export default function AuthDetails({ authPage, setdetailsPage }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [checked, setChecked] = React.useState(false);
   const [errorReg, seterrorReg] = useState(false)
 
   const dispatch = useDispatch(); //para llamar a redux
@@ -23,7 +24,7 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
   };
 
   const handleRegister = () => {
-    dispatch(register(email, password))
+    dispatch(register(email, password, checked))
       .then(() => {
         console.log("Registro correcto");
       })
@@ -58,16 +59,25 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
         secureTextEntry
         placeholder="Contraseña"
       />
-
+      
       <View >
         {authPage == 0? 
+          <View></View> : 
           <View>
-
-          </View> : 
-        <TextInput style={styles.TextInput}
-          secureTextEntry
-          placeholder = "Confirmar contrasena">
-        </TextInput>}
+            <TextInput style={styles.TextInput}
+              secureTextEntry
+              placeholder = "Confirmar contrasena">
+            </TextInput>
+            <Checkbox
+            status={checked ? 'checked' : 'unchecked'}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+            style={styles.checkbox}
+            />
+            <Text style={styles.label}>Soy Albergue</Text>
+          </View>
+            }
       </View>
 
     

@@ -3,8 +3,8 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "webpackServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://zr-k4j.anonymous.frontend.exp.direct",
+  "packagerNgrokUrl": "https://zr-k4j.anonymous.frontend.exp.direct",
+  "ngrokPid": 11948,
   "packagerPid": null
 }
