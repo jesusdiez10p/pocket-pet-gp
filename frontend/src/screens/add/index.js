@@ -43,13 +43,16 @@ export default function AddScreen() {
                 </TouchableOpacity>
             </Animatable.View>
             <Modal transparent={true} visible={cont}>
-                <View style={{ backgroundColor: "#000000aa", flex: 1, justifyContent: "center", alignItems: "center" }}>
-                    <View style={{
-                        backgroundColor: "#a69dd1",
-                        margin: 50,
-                        padding: 30,
-                        borderRadius: 20
-                    }}>
+                <Animatable.View style={{ backgroundColor: "#000000aa", flex: 1, justifyContent: "center", alignItems: "center" }}>
+                    <Animatable.View 
+                        style={{
+                            backgroundColor: "#a69dd1",
+                            margin: 50,
+                            padding: 30,
+                            borderRadius: 20
+                        }}
+                        animation="zoomIn"
+                    >
                         <Text style={styles2.titulo}>No tiene mascotas registradas</Text>
 
                         <TouchableOpacity
@@ -63,8 +66,8 @@ export default function AddScreen() {
                         >
                             <Text style={{textAlign: "center", fontWeight: "bold"}}>Aceptar</Text>
                         </TouchableOpacity>
-                    </View>
-                </View>
+                    </Animatable.View>
+                </Animatable.View>
             </Modal>
         </SafeAreaView> 
     )
