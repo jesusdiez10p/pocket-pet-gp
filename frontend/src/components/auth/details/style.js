@@ -27,6 +27,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
   },
+  checkbox: {
+    alignSelf: "center",
+  },
+  label: {
+    margin: 8,
+  },
 });
 
 export default styles;

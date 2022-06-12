@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { showUserPets } from ".";
+import { saveUserField } from "../../services/user";
 import { USER_STATE_CHANGE } from "../constants";
 require("firebase/firebase-auth");
 
@@ -53,12 +54,13 @@ export const logout = () => (dispatch) =>
   }).catch(() => {
     reject();
   });
-export const register = (email, password) => (dispatch) =>
+export const register = (email, password, tipo) => (dispatch) =>
   new Promise((resolve, reject) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
+        saveUserField("TipoUsuario",tipo?'Albergue':'Usuario')
         resolve();
       })
       .catch(() => {
