@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const styles2 = StyleSheet.create({
     headerText: {
         //fontWeight: "bold",
         
