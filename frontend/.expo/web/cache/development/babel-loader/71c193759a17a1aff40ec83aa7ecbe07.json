@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Post from \"./Post\";\nexport { Post };","map":{"version":3,"names":["Post"],"sources":["/home/jesus/Ulima/IX-Ciclo/Gest-proyectos/pocket-pet-gp/frontend/src/components/presentation/index.js"],"sourcesContent":["import Post from \"./Post\"\n\nexport { Post };"],"mappings":"AAAA,OAAOA,IAAP;AAEA,SAASA,IAAT"},"metadata":{},"sourceType":"module"}

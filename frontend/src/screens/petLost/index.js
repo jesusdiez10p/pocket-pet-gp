@@ -2,6 +2,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import React, { Component, useEffect, useState } from 'react';
 import { View, Text, TextInput, Picker, Button, TouchableOpacity, Alert, ScrollView, ActivityIndicator,Modal,Switch,Image,StyleSheet} from "react-native";
 import styles from './styles';
+import styles2 from './styles2';
 import {useDispatch} from 'react-redux'
 import { createPost } from '../../redux/actions/post'
 import { useSelector } from "react-redux";
@@ -10,7 +11,7 @@ import NavBarGeneral from '../../components/general/navbar'
 import {Divider} from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Animatable from 'react-native-animatable';
-
+import {back} from 'react-native/Libraries/Animated/Easing';
 export default function PetLost() {
     
     
@@ -47,6 +48,34 @@ export default function PetLost() {
         )
     } 
 
+    if (petSelected == undefined) {
+        return(
+            <Modal transparent={true} visible={true}>
+                <View style={{ backgroundColor: "#000000aa", flex: 1}}>
+                    <View style={{
+                        backgroundColor: "#a69dd1",
+                        margin: 50,
+                        padding: 30,
+                        borderRadius: 20
+                    }}>
+                        <Text style={styles2.titulo}>No tiene mascotas registradas</Text>
+
+                        <TouchableOpacity
+                            style={{
+                                backgroundColor: "#ffffff",
+                                padding:10,
+                                marginTop: 20,
+                                alignSelf: "center",
+                                borderRadius: 10}}
+                            onPress={() => {navigation.goBack()}}
+                        >
+                            <Text style={{textAlign: "center", fontWeight: "bold"}}>Aceptar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+        )
+    } else {
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
@@ -116,5 +145,6 @@ export default function PetLost() {
 
             </SafeAreaView>
         );
+    }
 }
 
