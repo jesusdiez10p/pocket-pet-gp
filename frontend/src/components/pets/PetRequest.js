@@ -1,6 +1,7 @@
 
 import React, { Component, useEffect, useState } from 'react';
-import { View, Text, TextInput, Picker, Button, TouchableOpacity, Alert, ScrollView, ActivityIndicator,Modal,Switch,Image,StyleSheet, FlatList} from "react-native";
+import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, ActivityIndicator,Modal,Switch,Image,StyleSheet, FlatList} from "react-native";
+import {Picker} from '@react-native-picker/picker'
 import styles from '././styles';
 import {Feather} from '@expo/vector-icons'
 import * as Animatable from 'react-native-animatable';
