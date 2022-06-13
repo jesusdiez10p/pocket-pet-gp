@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./src/redux/reducers";
-
+import QueyClientProvider, { QueryClient, QueryClientProvider } from "react-query"
 import Constants from "expo-constants";
 import firebase from "firebase/app";
 import Route from "./src/navigation/main/index.js";
@@ -30,10 +30,16 @@ if (message.indexOf('Setting a timer') <= -1) {
 };
 //--------------------------------------------------------------//
 
+const queryClient = new QueryClient({
+  defaultOptions: {queries: {refetchInterval: false, staleTime: Infinity}}
+})
+
 export default function App() {
   return (
     <Provider store={store}>
-      <Route />
+      <QueryClientProvider client={queryClient}>
+        <Route />
+      </QueryClientProvider>
     </Provider>
     
   );

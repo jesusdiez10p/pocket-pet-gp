@@ -4,7 +4,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { Feather, FontAwesome, Entypo } from "@expo/vector-icons";
 import CameraScreen from "../../screens/camera";
 import MainScreen from "../../screens/feed";
-import ChatScreen from "../../screens/selectLocation";
+import ChatScreen from "../../screens/chat/list";
 import PetScreen from "../../screens/pets";
 import UserScreen from "../../screens/user";
 import { useSelector } from "react-redux";
