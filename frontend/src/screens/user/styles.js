@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     height: 100 + "%",
     marginTop: 30,
     backgroundColor:"#b6ace3",
-    //backgroundColor:"black"
   },
   
   top: {

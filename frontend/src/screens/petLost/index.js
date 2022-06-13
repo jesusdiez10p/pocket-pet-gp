@@ -1,6 +1,7 @@
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import React, { Component, useEffect, useState } from 'react';
-import { View, Text, TextInput, Picker, Button, TouchableOpacity, Alert, ScrollView, ActivityIndicator,Modal,Switch,Image,StyleSheet} from "react-native";
+import {Picker} from '@react-native-picker/picker'
+import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, ActivityIndicator,Modal,Switch,Image,StyleSheet} from "react-native";
 import styles from './styles';
 import styles2 from '../add/styles2';
 import {useDispatch} from 'react-redux'
@@ -12,6 +13,7 @@ import {Divider} from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Animatable from 'react-native-animatable';
 import {back} from 'react-native/Libraries/Animated/Easing';
+import DatePicker from 'react-native-datepicker';
 export default function PetLost() {
     
     
@@ -60,10 +62,12 @@ export default function PetLost() {
      
                         <View style={styles .counter}>
                             <Animatable.Text animation="flipInY" delay={200} style={styles.etiquetaCampo}>FECHA DE PÉRDIDA</Animatable.Text>
-                                <TextInput
-                                style={styles.input}
-                                placeholder='FECHA'
-                                onChangeText={(text) => setFecha(text)}/>
+                            <DatePicker
+                                style={styles.date}
+                                format="DD-MM-YYYY"
+                                confirmBtnText="Confirmar"
+                                cancelBtnText="Cancelar"
+                            />
                         </View>
 
                         <View style={styles .counter}>

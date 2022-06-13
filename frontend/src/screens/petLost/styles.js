@@ -28,6 +28,22 @@ const styles = StyleSheet.create({
         elevation: 10,
     
       },
+
+    date: {
+        width: 90 + "%",
+        borderColor: "lightgray",
+        borderStyle: "solid",
+        backgroundColor: '#ffffff',
+        borderRadius: 7,
+        paddingVertical: 8,
+        paddingHorizontal: 10,
+        color: 'black',
+            // fontWeight: 'bold',
+        fontSize:15,
+        alignSelf: "center",
+        borderColor:"purple",
+        borderWidth:2,
+    },
       
     container:{
         flex: 1, 

@@ -1,6 +1,7 @@
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import React, {Component, useEffect, useState} from 'react'
-import { View, Text, TextInput, Image, Alert, Picker, ActivityIndicator, ScrollView } from 'react-native'
+import { Picker } from '@react-native-picker/picker'
+import { View, Text, TextInput, Image, Alert,ActivityIndicator, ScrollView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import styles from './styles'
 import {Feather} from '@expo/vector-icons'

@@ -1,10 +1,1 @@
-{
-  "expoServerPort": 19000,
-  "devToolsPort": 19002,
-  "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://zr-k4j.anonymous.frontend.exp.direct",
-  "packagerNgrokUrl": "https://zr-k4j.anonymous.frontend.exp.direct",
-  "ngrokPid": 3356,
-  "packagerPid": null,
-  "webpackServerPort": null
-}
+{}
