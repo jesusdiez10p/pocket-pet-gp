@@ -15,9 +15,12 @@ import CameraScreen from "../../screens/camera";
 import PetLost from "../../screens/petLost";
 import ViewPetSolicitants from "../../components/pets/Solicitants";
 import FavoriteScreen from "../../screens/favoritePosts";
+import { useChats } from "../../hooks/useChats";
+import ChatSingleScreen from "../../screens/chat/single";
 const Stack = createStackNavigator();
 
 export default function Route() {
+  useChats();
   const currentUserObj = useSelector((state) => state.auth); //use selector allows us to access the data that comes from redux
   const dispatch = useDispatch();
   let useralbergue = true; //probando nueva interfaz del albergue
@@ -97,6 +100,11 @@ export default function Route() {
               name="favorites"
               component = {FavoriteScreen}
               options = {{headerShown : true}}
+            />
+            <Stack.Screen
+              name="chatSingle"
+              component = {ChatSingleScreen}
+              options = {{headerShown : false}}
             />
           </>
           

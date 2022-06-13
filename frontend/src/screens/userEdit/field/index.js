@@ -21,7 +21,7 @@ export default function EditUserFieldScreen({route}){
 
     return(
         <SafeAreaView style={styles.container}>
-            <NavBarGeneral  title="                                    SAVE ➤➤ " leftButton={{display: true, name: 'save', action: onSave}}/>
+            <NavBarGeneral  title="                                    SAVE ➤➤ " rightButton={{display: true, name: 'save', action: onSave}}/>
             <Divider />
             <View style={styles.mainContainer}>
                 <Animatable.Text animation="fadeInLeft" style={styles.title}>{title}</Animatable.Text>

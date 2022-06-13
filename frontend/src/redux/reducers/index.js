@@ -5,12 +5,14 @@ import { user } from "./user";
 import { users } from "./users";
 import { loadeds } from "./loadeds";
 import {requests} from "./requests"
+import {chat} from "./chat"
 
 const Reducers = combineReducers({
   auth, pets, requests,
   userState: user,
   usersState: users,
-  loadeds
+  loadeds,
+  chat
 
 });
 export default Reducers;

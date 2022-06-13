@@ -178,7 +178,7 @@ export default function Pets({ user, pets }) {
         }}
       />
     
-    {String(user.uid)!=String(auth.uid)?
+    {String(user?.uid)!=String(auth?.uid)?
     <></>:
     pets.length<50? 
       <TouchableOpacity style={styles.touch} onPress={() => { setCount(true) }} >

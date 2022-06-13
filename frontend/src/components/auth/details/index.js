@@ -20,6 +20,7 @@ export default function AuthDetails({ authPage, setdetailsPage }) {
       })
       .catch(() => {
         console.log("Inicio de sesión fallido");
+        alert("Alguno de los datos ingresados es incorrecto")
       });
   };
 

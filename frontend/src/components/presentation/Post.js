@@ -6,6 +6,7 @@ import moment from 'moment'
 import { FontAwesome } from '@expo/vector-icons';
 import { createFavorite } from '../../redux/actions';
 import { bindActionCreators } from "redux";
+import firebase from 'firebase'
 const deviceHeight = Dimensions.get('window').height
 
 class Post extends Component {
@@ -121,12 +122,17 @@ class Post extends Component {
                         }}>
                         <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.dogIcon} />
                     </TouchableOpacity>
-                    {/* <TouchableOpacity
-                        onPress={() => {
-                            alert("Comentarios");
-                        }}>
+                    {firebase.auth().currentUser.uid!=this.props.user.uid?
+                    <TouchableOpacity
+                        onPress={() => 
+                            firebase.auth().currentUser.uid!=this.props.user.uid?
+                            this.props.navigation.navigate('chatSingle',{contactId: this.props.user.uid}):
+                            alert("No te puedes enviar un mensaje a ti mismo")
+                        }>
                         <Image resizeMode="stretch" style={[styles.icons, { height: 35, width: 35 }]} source={config.images.chatIcon} />
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>:
+                    <></>
+                    }
                     <TouchableOpacity
                         onPress={() => {
                             onShare()

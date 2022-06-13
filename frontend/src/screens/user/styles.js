@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   
   top: {
+    height: 40 + "%",
     flexDirection: "row",
     justifyContent: "space-around",
     padding: 20,

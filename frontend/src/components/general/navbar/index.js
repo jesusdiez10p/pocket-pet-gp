@@ -4,7 +4,7 @@ import {Feather} from '@expo/vector-icons'
 import styles from './styles'
 import {useNavigation} from '@react-navigation/native'
 
-export default function NavBarGeneral({title='EDITAR DATOS', leftButton={display: true}}, rightButton= {display: false}) {
+export default function NavBarGeneral({title='EDITAR DATOS', leftButton={display: true}, rightButton={display: false, name: ''}}) {
         const navigation = useNavigation()
         return (
         <View 
@@ -18,8 +18,9 @@ export default function NavBarGeneral({title='EDITAR DATOS', leftButton={display
                 <Text style={styles.title}>{title}</Text>
 
                 <TouchableOpacity style={styles.button} onPress={() => rightButton.display ? rightButton.action(): null}>
-                        {rightButton.display &&
-                                <Feather name={rightButton.name} size={26} color={'#6400FF'}/> 
+                        {
+                        rightButton.display &&
+                                <Feather name={rightButton.name} size={26} color="white"/> 
                         }
                 </TouchableOpacity>
         </View>

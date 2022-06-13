@@ -21,3 +21,6 @@ export const USERS_PETS_DATA ="USERS_PETS_DATA"
 
 export const USER_FAV_STATE_CHANGE ="USER_FAV_STATE_CHANGE"
 export const CLEAR_FAVS = "CLEAR_FAVS"
+
+//--------------------------//
+export const CHATS_SET = "CHATS_SET"
