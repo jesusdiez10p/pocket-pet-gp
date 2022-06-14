@@ -118,7 +118,7 @@ export function fetchUserPost() {
                     const id = doc.id;
                     return { id, ...data }
                 })
-                //console.log(posts)
+                console.log("posts;",posts)
                 dispatch({ type: USER_POST_STATE_CHANGE, posts })
             })
     })

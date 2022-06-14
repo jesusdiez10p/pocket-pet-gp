@@ -11,11 +11,12 @@ import UserPosts from "../../components/User/Posts";
 import UserBar from "../../components/User/Bar";
 import UserPets from "../../components/User/Pets";
 import { useDispatch, useSelector } from "react-redux";
-import { showUserPets } from "../../redux/actions";
+import { fetchUserPost, showUserPets } from "../../redux/actions";
 
 export default function UserScreen({route}) {
 
  const dispatch= useDispatch()
+ 
   const posts = useSelector((state)=>state.userState.posts)
   const [userPosts, setuserPosts] = useState(false);
   var currentUser = useSelector((state) => state.auth.currentUser);

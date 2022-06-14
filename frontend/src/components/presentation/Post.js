@@ -88,11 +88,11 @@ class Post extends Component {
                                 uri:
                                     this.props.userimage
                             }} />
-                        <TouchableOpacity
+                        {/* <Text
                             onPress={() =>
-                                this.props.navigation.navigate('UsersProfile', { OtherUser: this.props.user })}>
+                                this.props.navigation.navigate('UsersProfile', { OtherUser: this.props.user })}> */}
                             <Text style={{ marginLeft: 10 }} >{this.props.user.FullName}</Text>
-                        </TouchableOpacity>
+                        {/* </Text> */}
                     </View>
                     <View style={{ alignItems: "center" }} >
                         {/*aqui se encuentra el estado de la publicacion PERDIDO o EN ADOPCION*/}

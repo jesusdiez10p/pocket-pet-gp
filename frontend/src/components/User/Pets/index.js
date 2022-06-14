@@ -11,6 +11,7 @@ import * as Animatable from 'react-native-animatable';
 import * as ImagePicker from 'expo-image-picker'
 import * as MediaLibrary from 'expo-media-library'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
+import { saveUserPetImage } from "../../../services/user";
 
 export default function Pets({ user, pets }) {
 
@@ -28,6 +29,7 @@ export default function Pets({ user, pets }) {
   const [galleryItems, setGalleryItems] = useState([])
   const [image, setImage] = useState(null)
 
+  const [uriPetsImage, setUriPetsImage] = useState('')
 
   useEffect(() => { //Se carga cada vez que el componente es llamado
     (async () => {
@@ -49,7 +51,7 @@ export default function Pets({ user, pets }) {
       quality: 1
     })
     if (!result.cancelled) {
-      //Colocacion de Imagen
+      setUriPetsImage(result.uri)
     }
   }
 
@@ -78,10 +80,11 @@ export default function Pets({ user, pets }) {
   const savePet = async () => {
     setCount(false)
     const response = await API.createUserPet(nnombre, nraza, nedad)
-    console.log(response)
+    saveUserPetImage(uriPetsImage, response)
     changennombre(null)
     changenraza(null)
     changenedad(null)
+    setUriPetsImage('')
   }
 
   const Separator = () => (
@@ -124,6 +127,7 @@ export default function Pets({ user, pets }) {
               <Image
                 //source={require('@expo/snack-static/react-native-logo.png')}
                 style={styles.imagen}
+                source = {{uri: item.Image}}
               />
               <View style={styles.datos}>
                 <View style={styles.contenedordata}>
@@ -149,7 +153,7 @@ export default function Pets({ user, pets }) {
                     {item.Edad}
                   </Text>
                 </View>
-                <View style={{ alignItems: "center" }}>
+                <View style={{ alignItems: "center", justifyContent: "center"}}>
                   <View style={styles.conte}>
 
                     <Switch
@@ -254,6 +258,7 @@ export default function Pets({ user, pets }) {
                 onPress={() => chooseImage()}>
                 <Image
                   style={{ width: 70, height: 70, borderRadius: 10, borderColor: "white", borderWidth: 1, margin: 2, backgroundColor: "black" }}
+                  source={{uri: uriPetsImage}}
                 />
               </TouchableOpacity>
               <TouchableOpacity style={styles.touchablePerfil} onPress={() => chooseImage()}>

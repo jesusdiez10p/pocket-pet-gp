@@ -6,7 +6,7 @@ import moment from 'moment'
 //import { ActivityIndicator } from 'react-native-paper';
 import { connect, useDispatch } from "react-redux";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { Initusuarios, clearData } from '../../redux/actions/post'
+import { Initusuarios, clearData, fetchUserPost } from '../../redux/actions/post'
 import { bindActionCreators } from 'redux';
 
 
@@ -23,6 +23,7 @@ function PostFeed(props) {
     const fetchData = () => {
         dispatch(clearData());
         dispatch(Initusuarios());
+        dispatch(fetchUserPost());
         setIsFetching(false);
     }
     const onRefresh = () => {

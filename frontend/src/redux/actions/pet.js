@@ -1,6 +1,7 @@
 import firebase from "firebase";
 import { CURRENT_USER_PETS, USER_STATE_CHANGE,OTHER_USER_PETS } from "../constants";
 import { saveMediaToStorage } from '../../services/random';
+import { useState } from "react";
 require('firebase/firestore')
 
 export const showUserPets = (uid=firebase.auth().currentUser?.uid) => (dispatch) => {
@@ -68,7 +69,7 @@ new Promise((resolve, reject) => {
 });
 
 export const createUserPet = async(Nombre,Raza,Edad,uid=firebase.auth().currentUser.uid) => 
-{const response = await firebase.firestore()
+{ const response = await firebase.firestore()
   .collection('user')
   .doc(uid)
   .collection('Mascotas')
@@ -78,6 +79,9 @@ export const createUserPet = async(Nombre,Raza,Edad,uid=firebase.auth().currentU
     Estado: false,
     Edad,
     Raza
+  })
+  .then((docRef)=>{
+     return docRef.id
   })
   return response
 }

@@ -13,6 +13,21 @@ export const saveUserProfileImage = (image) => new Promise((resolve,reject) => {
     })
 })
 
+export const saveUserPetImage = (image,petId) => new Promise((resolve,reject) => {
+    saveMediaToStorage(image, `pets/${firebase.auth().currentUser.uid}/${petId}`).then((res) =>{
+        firebase.firestore()
+        .collection('user')
+        .doc(firebase.auth().currentUser.uid)
+        .collection('Mascotas')
+        .doc(petId)
+        .update({
+            Image: res
+        })
+        .then(() => resolve())
+        .catch(() => reject())
+    })
+})
+
 export const saveUserField = (field, value) => new Promise((resolve,reject) => {
 
     let obj = {}

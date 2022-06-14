@@ -94,7 +94,7 @@ export default function PetLost() {
                             <Picker style={styles.picker}
                             mode="dialog" 
                             selectedValue={petSelected}
-                            onValueChange={(itemValue) => {setpetSelected(itemValue); console.log(petSelected)}}
+                            onValueChange={(itemValue) => {setpetSelected(itemValue); console.log(itemValue)}}
                             >
                         
                             {currentUserPets.map((item, index) => {
